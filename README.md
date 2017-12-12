@@ -14,3 +14,5 @@
 ## generate 
 - bee generate model  users -fields=name:string,email:string
 - bee generate appcode -driver=mysql -conn="root:12345678@tcp(127.0.0.1:3306)/test" -level=1 //1:models; 2: models and controllers; 3: models and controllers and routes
+
+## get app config params beego.AppConfigString("param_name")
