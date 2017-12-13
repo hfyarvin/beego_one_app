@@ -18,6 +18,8 @@
                     Official website: <a href="http://{{.Website}}">{{.Website}}</a>
                 <br />
                     Contact me: {{.Email}}
+                <br />
+                    My name: {{.Name}}
                 </p>
               </div>
             </div>

@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"fmt"
 	"github.com/astaxie/beego"
 )
 
@@ -82,7 +83,13 @@ func (c *WelcomeController) Delete() {
 //GetPage
 
 func (c *WelcomeController) WelcomeIndex() {
+	fmt.Println("Welcome index page.")
 	c.Data["Website"] = "beego.me"
 	c.Data["Email"] = "astaxie@gmail.com"
+	c.Data["Name"] = beego.AppConfig.String("name")
 	c.TplName = "welcome/welcome.tpl" //default file_folder is views
+}
+
+func (c *WelcomeController) WelcomeMyName() {
+	c.Ctx.Output.Body([]byte(fmt.Sprintf("welcome %s", beego.AppConfig.String("name"))))
 }
